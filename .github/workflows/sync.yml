@@ -32,4 +32,4 @@ jobs:
           ML_APP_ID: ${{ secrets.ML_APP_ID }}
           ML_SECRET: ${{ secrets.ML_SECRET }}
           NODE_ENV: production
-        run: node src/sync.js
+        run: node src/sync.cjs
