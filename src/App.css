@@ -1,0 +1,25 @@
+/* App.css — estilos complementares ao index.css */
+/* A maioria dos estilos está inline no App.jsx para facilitar manutenção */
+
+select option {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus, select:focus {
+  border-color: var(--accent-green) !important;
+}
+
+/* Responsivo mobile */
+@media (max-width: 600px) {
+  header {
+    padding: 0 16px !important;
+  }
+  .kpi-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
