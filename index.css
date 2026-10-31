@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --bg-base:    #0d0f14;
+  --bg-surface: #141720;
+  --bg-card:    #1a1e2a;
+  --bg-hover:   #1f2433;
+  --border:     #2a2f3d;
+  --text-primary:   #e8eaf0;
+  --text-secondary: #8b90a0;
+  --text-muted:     #555c70;
+  --accent-green:  #00d084;
+  --accent-gold:   #f5a623;
+  --accent-red:    #ff4d6d;
+  --accent-blue:   #4d9fff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in { animation: fadeIn 0.3s ease forwards; }
+.spinner {
+  width: 20px; height: 20px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent-green);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* Badge variants */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 8px; border-radius: 99px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.03em;
+}
+.badge-green  { background: rgba(0,208,132,0.12); color: var(--accent-green); }
+.badge-gold   { background: rgba(245,166,35,0.12); color: var(--accent-gold); }
+.badge-red    { background: rgba(255,77,109,0.12); color: var(--accent-red); }
+.badge-blue   { background: rgba(77,159,255,0.12); color: var(--accent-blue); }
+.badge-muted  { background: var(--bg-hover); color: var(--text-secondary); }
