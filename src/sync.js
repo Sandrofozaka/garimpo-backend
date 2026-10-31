@@ -19,8 +19,8 @@ async function run() {
       console.log(`✅ ML: ${mlProducts.length} produtos coletados`);
 
       if (mlProducts.length > 0) {
-        const saved = await saveProducts(mlProducts);
-        console.log(`💾 ML: ${saved} produtos salvos no Supabase`);
+        await saveProducts(mlProducts);
+        console.log(`💾 ML: produtos salvos no Supabase`);
       }
     } catch (err) {
       console.error('❌ Erro no Mercado Livre:', err.message);
